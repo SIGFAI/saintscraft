@@ -156,13 +156,11 @@
   "status": "beta",
   "issues": "https://github.com/SawyerTheNerd/Minecraft-X-SaintsRow3Remastered/issues",
   "notes": [
-    "You need Saints Row: The Third Remastered on Steam (the 2024-08 build; Epic and GOG builds are not supported) and Minecraft: Java Edition. Windows only, DirectX 11.",
-    "The app adds dinput8.dll and a mcsr3 folder (licenses) to the Saints Row folder; Restore removes them. The mod writes its log to <game>\\mcsr3.",
-    "Press Play: Minecraft starts first (the app's Prism instance \"sigf-saintscraft\", Minecraft 26.3, Fabric Loader 0.19.5, Fabric API 0.161.0+26.3, Java 25, your own Minecraft account) and opens a void creative world by itself; leave its window open. Then Saints Row starts.",
-    "F7 switches between Minecraft mode (on foot, Steve, blocks, items) and Saints Row mode; in a vehicle it is always Saints Row mode.",
-    "Single player only: do not join or host co-op while it is installed. Back up your saves first. Known upstream bugs: the SR3 HUD can vanish, scope zoom, cars only brake at blocks.",
-    "SIGF build: the author's Lua dev channel (scripts dropped into mcsr3\\exec) is compiled out; nothing else differs from the upstream source.",
-    "The link listens on 127.0.0.1:25599 with no authentication while Minecraft runs (upstream design).",
-    "SIGF build of f608f69 (no upstream release; \"Status: early\"). Beta: report bugs to the author on the upstream issue tracker."
+    "How it works: real Minecraft is drawn into Saints Row: The Third Remastered. On foot you play Steve in first person with Minecraft's hotbar, blocks, swords and TNT on the streets, while Saints Row keeps the world, the cars and the camera.",
+    "Press Play: Minecraft starts first and opens a void creative world by itself; leave its window open. Then Saints Row starts: load your save, and Minecraft links up by itself (its hotbar shows at the bottom of the screen).",
+    "F7 switches between Minecraft mode and plain Saints Row mode (in a vehicle it is always Saints Row mode); use Saints Row mode for cars, doors, missions and the crib. Minecraft mode: WASD, Space (double-tap to fly), mouse to break/place, 1-9 hotbar, E inventory, O Minecraft menu, Esc pause.",
+    "You need Saints Row: The Third Remastered on Steam, the 2024-08 build (Epic and GOG are not supported; a game update can break the link), and Minecraft: Java Edition. Windows, DirectX 11.",
+    "Single player only: do not join or host co-op while it is installed. Back up your saves first. Known upstream bugs: the Saints Row HUD can vanish, scopes zoom Saints Row but not Minecraft, cars brake at blocks instead of crashing, furniture can snap Steve back to the Boss.",
+    "The local link has no password while Minecraft runs. Beta (\"Status: early\" upstream): report bugs to the author with the Report a bug link."
   ]
 }
