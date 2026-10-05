@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "name": "SaintsCraft",
   "tagline": "Real Minecraft inside Saints Row: The Third Remastered: walk Steelport as Steve, build, swing swords at the Saints' enemies and blow up TNT, while SR3 keeps its cars.",
+  "how_to_play": [
+    "Play Steve in first person on Saints Row: The Third's streets with Minecraft's hotbar, blocks, swords and TNT.",
+    "Press F7 to switch between Minecraft mode and plain Saints Row mode; use Saints Row mode for cars, doors, missions and the crib.",
+    "Minecraft mode: WASD, Space (double-tap to fly), mouse to break and place, 1-9 hotbar, E inventory, O Minecraft menu.",
+    "Press Play: Minecraft opens its own world first; leave its window open, then load your Saints Row save and wait for the hotbar."
+  ],
   "kind": "passthrough",
   "games": [
     {
