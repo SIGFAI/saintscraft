@@ -4,10 +4,11 @@
   "name": "SaintsCraft",
   "tagline": "Real Minecraft inside Saints Row: The Third Remastered: walk Steelport as Steve, build, swing swords at the Saints' enemies and blow up TNT, while SR3 keeps its cars.",
   "how_to_play": [
-    "Play Steve in first person on Saints Row: The Third's streets with Minecraft's hotbar, blocks, swords and TNT.",
-    "Press F7 to switch between Minecraft mode and plain Saints Row mode; use Saints Row mode for cars, doors, missions and the crib.",
-    "Minecraft mode: WASD, Space (double-tap to fly), mouse to break and place, 1-9 hotbar, E inventory, O Minecraft menu.",
-    "Press Play: Minecraft opens its own world first; leave its window open, then load your Saints Row save and wait for the hotbar."
+    "Play Steve in first person on Saints Row: The Third Remastered's streets with Minecraft's hotbar, blocks, swords and TNT; Saints Row keeps the cars and camera.",
+    "Press Play: Minecraft starts first and opens a void creative world by itself; leave its window open. Then Saints Row starts: load your save.",
+    "Minecraft links up by itself: its hotbar shows at the bottom of the screen.",
+    "F7 switches between Minecraft mode and Saints Row mode (always Saints Row in a vehicle); use Saints Row mode for cars, doors, missions and the crib.",
+    "Minecraft mode: WASD, Space (double-tap to fly), mouse to break/place, 1-9 hotbar, E inventory, O Minecraft menu, Esc pause."
   ],
   "kind": "passthrough",
   "games": [
@@ -162,9 +163,6 @@
   "status": "beta",
   "issues": "https://github.com/SawyerTheNerd/Minecraft-X-SaintsRow3Remastered/issues",
   "notes": [
-    "How it works: real Minecraft is drawn into Saints Row: The Third Remastered. On foot you play Steve in first person with Minecraft's hotbar, blocks, swords and TNT on the streets, while Saints Row keeps the world, the cars and the camera.",
-    "Press Play: Minecraft starts first and opens a void creative world by itself; leave its window open. Then Saints Row starts: load your save, and Minecraft links up by itself (its hotbar shows at the bottom of the screen).",
-    "F7 switches between Minecraft mode and plain Saints Row mode (in a vehicle it is always Saints Row mode); use Saints Row mode for cars, doors, missions and the crib. Minecraft mode: WASD, Space (double-tap to fly), mouse to break/place, 1-9 hotbar, E inventory, O Minecraft menu, Esc pause.",
     "You need Saints Row: The Third Remastered on Steam, the 2024-08 build (Epic and GOG are not supported; a game update can break the link), and Minecraft: Java Edition. Windows, DirectX 11.",
     "Single player only: do not join or host co-op while it is installed. Back up your saves first. Known upstream bugs: the Saints Row HUD can vanish, scopes zoom Saints Row but not Minecraft, cars brake at blocks instead of crashing, furniture can snap Steve back to the Boss.",
     "The local link has no password while Minecraft runs. Beta (\"Status: early\" upstream): report bugs to the author with the Report a bug link."
