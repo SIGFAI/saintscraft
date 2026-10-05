@@ -1,0 +1,5 @@
+# Minecraft X Saints Row: The Third Remastered (read by build.py and play.py)
+sr3: C:/Program Files (x86)/Steam/steamapps/common/Saints Row The Third Remastered
+steam_appid: 978300
+build: build              # CMake build tree for link/
+minecraft_name: Steve     # offline name of the Minecraft dev client

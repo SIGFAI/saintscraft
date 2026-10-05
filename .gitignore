@@ -1,0 +1,14 @@
+# Fetched by tools/fetch_sources.sh
+/skycraft/
+/tools/jdk-*/
+/*.partial/
+
+# Build output
+/build/
+
+# Scratch, logs, save backups
+/tmp/
+*.log
+__pycache__/
+*.pyc
+minecraft.log

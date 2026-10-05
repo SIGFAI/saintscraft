@@ -1,0 +1,55 @@
+diff --git a/link/CMakeLists.txt b/link/CMakeLists.txt
+index 075f4ff..daf3d26 100644
+--- a/link/CMakeLists.txt
++++ b/link/CMakeLists.txt
+@@ -14,9 +14,17 @@ FetchContent_MakeAvailable(minhook)
+ set(SKYCRAFT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../skycraft" CACHE PATH "SkyCraft checkout (tools/fetch_sources.sh)")
+ 
+ file(GLOB SOURCES CONFIGURE_DEPENDS src/*.cpp)
++# SIGF build: the Lua dev channel (devchan.cpp, luadev.cpp) is left out unless MCSR3_DEVCHAN=ON
++option(MCSR3_DEVCHAN "Build the Lua dev channel (mcsr3/exec/*.lua)" OFF)
++if(NOT MCSR3_DEVCHAN)
++	list(FILTER SOURCES EXCLUDE REGEX "/(devchan|luadev)[.]cpp$")
++endif()
+ add_library(dinput8 SHARED ${SOURCES})
+ target_include_directories(dinput8 PRIVATE src "${SKYCRAFT_DIR}/protocol")
+ target_compile_definitions(dinput8 PRIVATE WIN32_LEAN_AND_MEAN NOMINMAX _CRT_SECURE_NO_WARNINGS)
++if(MCSR3_DEVCHAN)
++	target_compile_definitions(dinput8 PRIVATE MCSR3_DEVCHAN)
++endif()
+ target_compile_options(dinput8 PRIVATE /W4 /wd4100 /utf-8 /Zi)
+ target_link_options(dinput8 PRIVATE /DEBUG /OPT:REF /OPT:ICF)
+ target_link_libraries(dinput8 PRIVATE minhook d3d11 dxgi d3dcompiler)
+diff --git a/link/src/dllmain.cpp b/link/src/dllmain.cpp
+index 2929316..a1bbbdc 100644
+--- a/link/src/dllmain.cpp
++++ b/link/src/dllmain.cpp
+@@ -1,13 +1,17 @@
+ // SRTTR.exe imports DirectInput8Create from dinput8.dll, so Windows loads this proxy from the game
+ // folder first. It forwards that call to the real system DLL and starts the link.
+ #include "compositor.h"
++#ifdef MCSR3_DEVCHAN
+ #include "devchan.h"
++#endif
+ #include "ground.h"
+ #include "input.h"
+ #include "link.h"
+ #include "log.h"
+ #include "lua.h"
++#ifdef MCSR3_DEVCHAN
+ #include "luadev.h"
++#endif
+ #include "mainloop.h"
+ #include "sr3.h"
+ 
+@@ -48,8 +52,10 @@ namespace
+ 		}
+ 		if (lua::Init())
+ 		{
++#ifdef MCSR3_DEVCHAN  // SIGF build: the Lua dev channel (mcsr3\exec\*.lua, mc_write/mc_call) is compiled out
+ 			luadev::Install();
+ 			devchan::Start();
++#endif
+ 			mainloop::OnTick(lua::Tick);
+ 		}
+ 		if (sr3::Init())

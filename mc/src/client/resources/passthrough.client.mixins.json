@@ -1,0 +1,7 @@
+{
+	"required": true,
+	"package": "dev.mcsr3.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": ["AbstractClientPlayerMixin", "AvatarRendererMixin", "BarrierOutlineMixin", "InputConstantsMixin", "ScreenMixin", "WindowMixin", "CameraMixin", "ClientLevelMixin", "EntityPickMixin", "LivingEntityMixin", "FogRendererMixin", "GameRendererMixin", "GlCommandEncoderMixin", "KeyMappingAccessor", "LocalPlayerMixin", "ToastManagerMixin"],
+	"injectors": { "defaultRequire": 1 }
+}
