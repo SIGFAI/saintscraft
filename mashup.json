@@ -1,0 +1,168 @@
+{
+  "id": "sigf/saintscraft",
+  "version": "0.1.0",
+  "name": "SaintsCraft",
+  "tagline": "Real Minecraft inside Saints Row: The Third Remastered: walk Steelport as Steve, build, swing swords at the Saints' enemies and blow up TNT, while SR3 keeps its cars.",
+  "kind": "passthrough",
+  "games": [
+    {
+      "game": "saintsrow3",
+      "role": "host",
+      "label": "Saints Row: The Third Remastered",
+      "engine": "Saints Row: The Third Remastered (DX11) + dinput8.dll proxy (C++, MinHook)",
+      "apps": {
+        "steam": "978300"
+      },
+      "runtime": "Steam build of 2024-08 only (SRTTR.exe 21,474,968 bytes); Epic and GOG builds are not supported"
+    },
+    {
+      "game": "minecraft",
+      "role": "guest",
+      "label": "Minecraft",
+      "engine": "Minecraft Java 26.3 + Fabric mod passthrough (Java)",
+      "mc": "26.3",
+      "loader": "fabric@0.19.5",
+      "java": "25"
+    }
+  ],
+  "requires": [
+    {
+      "id": "fabric-loader",
+      "version": "0.19.5"
+    },
+    {
+      "id": "fabric-api",
+      "version": "0.161.0+26.3",
+      "note": "in the Minecraft pack (downloaded from Modrinth)"
+    }
+  ],
+  "install": [
+    {
+      "game": "saintsrow3",
+      "strategy": "game-dir-snapshot",
+      "files": [
+        {
+          "src": "saintscraft-sr3.zip",
+          "dst": "{game}",
+          "unpack": true,
+          "contents": [
+            {
+              "path": "dinput8.dll",
+              "sha256": "626a1df08ce46ca9340f38e6e024144bce13fe26a4102b3d238e78691167145f"
+            },
+            {
+              "path": "mcsr3/LICENSE-MinHook.txt",
+              "sha256": "4f21f857550d7be854da6ea5f2da4e6775ca4e3fbb535e4f3d961c47d0bf3335"
+            },
+            {
+              "path": "mcsr3/LICENSE-saintscraft.txt",
+              "sha256": "e639f355a5a7e703e9c0816fbbc0405288b8b59ac067d59eed82fcc67971e741"
+            },
+            {
+              "path": "mcsr3/sigf-build/0001-compile-out-lua-dev-channel.patch",
+              "sha256": "217fae5833916601471b0d68bd67938672a64c0c1b1a4773b3d1f1f90c99e93e"
+            },
+            {
+              "path": "mcsr3/THIRD_PARTY_NOTICES-saintscraft.md",
+              "sha256": "33502e24fb583071be456b334c44f01a2124db097fb6329180c647929fa9ea18"
+            }
+          ],
+          "url": "https://github.com/SIGFAI/saintscraft/releases/download/v0.1.0/saintscraft-sr3.zip",
+          "sha256": "4ee627201dfe232ac684355d9294a45a51eefae5c4df69eb3be3dfc74b05eceb",
+          "size": 196006
+        }
+      ]
+    },
+    {
+      "game": "minecraft",
+      "strategy": "mrpack",
+      "pack": {
+        "src": "saintscraft.mrpack",
+        "url": "https://github.com/SIGFAI/saintscraft/releases/download/v0.1.0/saintscraft.mrpack",
+        "sha256": "6303b5b8d2127636c7c3537e286f6df4eca4e8d14c1ed65b9d8d2f5e7e86986e",
+        "size": 216989
+      }
+    }
+  ],
+  "launch": [
+    {
+      "game": "minecraft",
+      "wait": "port:25599"
+    },
+    {
+      "game": "saintsrow3",
+      "args": []
+    }
+  ],
+  "files": [
+    {
+      "name": "saintscraft-sr3.zip",
+      "url": "https://github.com/SIGFAI/saintscraft/releases/download/v0.1.0/saintscraft-sr3.zip",
+      "sha256": "4ee627201dfe232ac684355d9294a45a51eefae5c4df69eb3be3dfc74b05eceb",
+      "size": 196006
+    },
+    {
+      "name": "saintscraft.mrpack",
+      "url": "https://github.com/SIGFAI/saintscraft/releases/download/v0.1.0/saintscraft.mrpack",
+      "sha256": "6303b5b8d2127636c7c3537e286f6df4eca4e8d14c1ed65b9d8d2f5e7e86986e",
+      "size": 216989
+    }
+  ],
+  "source": {
+    "repo": "https://github.com/SawyerTheNerd/Minecraft-X-SaintsRow3Remastered",
+    "license": "MIT AND BSD-2-Clause",
+    "upstream_license": "MIT",
+    "commit": "f608f6962ec809ce2b2d97df9898817998611bde",
+    "hosted": "https://github.com/SIGFAI/saintscraft",
+    "built": {
+      "by": "SIGF",
+      "commit": "f608f6962ec809ce2b2d97df9898817998611bde",
+      "builder": "AWS EC2 i-0022be8314df37721 (c6i.4xlarge, Windows Server 2022, terminated after the build)",
+      "artifacts": {
+        "0001-compile-out-lua-dev-channel.patch": "217fae5833916601471b0d68bd67938672a64c0c1b1a4773b3d1f1f90c99e93e",
+        "dinput8.dll": "626a1df08ce46ca9340f38e6e024144bce13fe26a4102b3d238e78691167145f",
+        "LICENSE": "e639f355a5a7e703e9c0816fbbc0405288b8b59ac067d59eed82fcc67971e741",
+        "MinHook-LICENSE.txt": "4f21f857550d7be854da6ea5f2da4e6775ca4e3fbb535e4f3d961c47d0bf3335",
+        "passthrough-0.1.0.jar": "4857755941f2ed890a6fc89487848562a008cf7270a98f28e49ff152cfe72045",
+        "THIRD_PARTY_NOTICES.md": "33502e24fb583071be456b334c44f01a2124db097fb6329180c647929fa9ea18"
+      }
+    },
+    "patches": [
+      {
+        "file": "library/saintscraft/patches/0001-compile-out-lua-dev-channel.patch",
+        "why": "Lua dev channel compiled out (CMake option MCSR3_DEVCHAN, default OFF)"
+      }
+    ],
+    "linked": [
+      {
+        "name": "MinHook",
+        "version": "1.3.4",
+        "repo": "https://github.com/TsudaKageyu/minhook",
+        "commit": "c3fcafdc10146beb5919319d0683e44e3c30d537",
+        "license": "BSD-2-Clause"
+      }
+    ]
+  },
+  "media": {},
+  "built_by": {
+    "author": "SawyerTheNerd",
+    "authors": [
+      "SawyerTheNerd"
+    ],
+    "packaged_by": "SIGF"
+  },
+  "idea_by": "SawyerTheNerd",
+  "built_at": "2026-10-05T00:00:00.000Z",
+  "status": "beta",
+  "issues": "https://github.com/SawyerTheNerd/Minecraft-X-SaintsRow3Remastered/issues",
+  "notes": [
+    "You need Saints Row: The Third Remastered on Steam (the 2024-08 build; Epic and GOG builds are not supported) and Minecraft: Java Edition. Windows only, DirectX 11.",
+    "The app adds dinput8.dll and a mcsr3 folder (licenses) to the Saints Row folder; Restore removes them. The mod writes its log to <game>\\mcsr3.",
+    "Press Play: Minecraft starts first (the app's Prism instance \"sigf-saintscraft\", Minecraft 26.3, Fabric Loader 0.19.5, Fabric API 0.161.0+26.3, Java 25, your own Minecraft account) and opens a void creative world by itself; leave its window open. Then Saints Row starts.",
+    "F7 switches between Minecraft mode (on foot, Steve, blocks, items) and Saints Row mode; in a vehicle it is always Saints Row mode.",
+    "Single player only: do not join or host co-op while it is installed. Back up your saves first. Known upstream bugs: the SR3 HUD can vanish, scope zoom, cars only brake at blocks.",
+    "SIGF build: the author's Lua dev channel (scripts dropped into mcsr3\\exec) is compiled out; nothing else differs from the upstream source.",
+    "The link listens on 127.0.0.1:25599 with no authentication while Minecraft runs (upstream design).",
+    "SIGF build of f608f69 (no upstream release; \"Status: early\"). Beta: report bugs to the author on the upstream issue tracker."
+  ]
+}
