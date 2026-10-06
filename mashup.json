@@ -165,6 +165,7 @@
   "notes": [
     "You need Saints Row: The Third Remastered on Steam, the 2024-08 build (Epic and GOG are not supported; a game update can break the link), and Minecraft: Java Edition. Windows, DirectX 11.",
     "Single player only: do not join or host co-op while it is installed. Back up your saves first. Known upstream bugs: the Saints Row HUD can vanish, scopes zoom Saints Row but not Minecraft, cars brake at blocks instead of crashing, furniture can snap Steve back to the Boss.",
-    "The local link has no password while Minecraft runs. Beta (\"Status: early\" upstream): report bugs to the author with the Report a bug link."
+    "The local link has no password while Minecraft runs. Beta (\"Status: early\" upstream): report bugs to the author with the Report a bug link.",
+    "Free SIGF servers can't host this mashup: Saints Row's link writes straight into the Minecraft world running in your own game, so it only works in that single-player world."
   ]
 }
